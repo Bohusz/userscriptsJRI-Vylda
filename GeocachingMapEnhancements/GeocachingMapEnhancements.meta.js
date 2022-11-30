@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Geocaching Map Enhancements
-// @version     0.9.1
+// @version     0.9.2
 // @author      JRI, Vylda
 // @oujs:author JRI, Vylda
 // @namespace   inge.org.uk/userscripts
@@ -22,5 +22,5 @@
 // @icon        http://gcgpx.cz/gme/GeocachingMap48.png
 // @icon64      http://gcgpx.cz/gme/GeocachingMap64.png
 // @updateURL   http://gcgpx.cz/gme/GeocachingMapEnhancements.meta.js
-// @downloadURL https://openuserjs.org/install/Vylda/Geocaching_Map_Enhancements.user.js
+// @downloadURL http://gcgpx.cz/gme/GeocachingMapEnhancements.user.js
 // ==/UserScript==

@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Geocaching Map Enhancements
-// @version     0.9.1
+// @version     0.9.2
 // @author      JRI, Vylda
 // @oujs:author JRI, Vylda
 // @namespace   inge.org.uk/userscripts
@@ -22,7 +22,7 @@
 // @icon        http://gcgpx.cz/gme/GeocachingMap48.png
 // @icon64      http://gcgpx.cz/gme/GeocachingMap64.png
 // @updateURL   http://gcgpx.cz/gme/GeocachingMapEnhancements.meta.js
-// @downloadURL https://openuserjs.org/install/Vylda/Geocaching_Map_Enhancements.user.js
+// @downloadURL http://gcgpx.cz/gme/GeocachingMapEnhancements.user.js
 // ==/UserScript==
 
 /* jshint multistr: true */
@@ -34,7 +34,7 @@
 	var gmeResources = {
 		parameters: {
 			// Defaults
-			version: "0.9.1",
+			version: "0.9.2",
 			versionMsg: "Waiting for resources loaded in GC page",
 			brightness: 1,	// Default brightness for maps (0-1), can be overridden by custom map parameters.
 			filterFinds: false, // True filters finds out of list searches.
@@ -46,17 +46,16 @@
 			defaultHillShading: "Hillshading",
 			maps: [
 				//	{alt:"Readable Name", tileUrl: "URL template including {s} (subdomain) and either {q} (quadkey) or {x},{y},{z} (Google/TMS tile coordinates + zoom)", subdomains: "0123", minZoom: 0, maxZoom: 24, attribution: "Copyright message (HTML allowed)", name: "shortname", overlay:false }
-				{ alt: "OpenStreetMap", tileUrl: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", name: "osm", subdomains: "abc" },
-				{ alt: "OpenCycleMap", tileUrl: "https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png", name: "ocm", apiKey: 'OpenCycleMap', apiKeyQuery: "apikey={apikey}" },
-				{ alt: "Bing Maps", tileUrl: "https://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}?g=864&mkt=en-gb&lbl=l1&stl=h&shading=hill&n=z", subdomains: "0123", minZoom: 1, maxZoom: 20, attribution: "<a href=\'https://www.bing.com/maps/\'>Bing</a> map data copyright Microsoft and its suppliers", name: "bingmap", ignore: true },
-				{ alt: "Bing Aerial View", tileUrl: "https://ecn.t{s}.tiles.virtualearth.net/tiles/a{q}?g=737&n=z", subdomains: "0123", minZoom: 1, maxZoom: 20, attribution: "<a href=\'https://www.bing.com/maps/\'>Bing</a> map data copyright Microsoft and its suppliers", name: "bingaerial" },
-				{ alt: "Google Maps", tileUrl: "https://mt.google.com/vt?&x={x}&y={y}&z={z}", name: "googlemaps", attribution: "<a href=\'https://maps.google.com/\'>Google</a> Maps", subdomains: "1234", tileSize: 256, maxZoom: 22 },
-				{ alt: "Google Satellite", tileUrl: "https://mt.google.com/vt?lyrs=s&x={x}&y={y}&z={z}", name: "googlemapssat", attribution: "<a href=\'https://maps.google.com/\'>Google</a> Maps Satellite", subdomains: "1234", tileSize: 256, maxZoom: 22 },
-				{ alt: "Freemap Slovakia Hiking", tileUrl: "http://t{s}.freemap.sk/T/{z}/{x}/{y}.jpeg", attribution: "Map &copy; <a href='http://www.freemap.sk/'>Freemap Slovakia</a>, data &copy; <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors", subdomains: "1234", minZoom: 8, maxZoom: 16, ignore: true },
-				{ alt: "Freemap Slovakia Bicycle", tileUrl: "http://t{s}.freemap.sk/C/{z}/{x}/{y}.jpeg", attribution: "Map &copy; <a href='http://www.freemap.sk/'>Freemap Slovakia</a>, data &copy; <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors", subdomains: "1234", minZoom: 8, maxZoom: 16, ignore: true },
-				{ alt: "Freemap Slovakia Car", tileUrl: "http://t{s}.freemap.sk/A/{z}/{x}/{y}.jpeg", attribution: "Map &copy; <a href='http://www.freemap.sk/'>Freemap Slovakia</a>, data &copy; <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors", subdomains: "1234", minZoom: 8, maxZoom: 16, ignore: true },
-				{ alt: "Mapy.cz - Turistická", tileUrl: "https://m{s}.mapserver.mapy.cz/turist-m/{z}-{x}-{y}", minZoom: 5, maxZoom: 18, subdomains: "1234", attribution: "© <a href='//www.seznam.cz' target='_blank'>Seznam.cz, a.s.</a>, © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>, © NASA" },
-				{ alt: "Hillshading", tileUrl: "http://{s}.tiles.wmflabs.org/hillshading/{z}/{x}/{y}.png", subdomains: "abc", attribution: "Hillshading by <a	 href=\'https://wiki.openstreetmap.org/wiki/Hike_%26_Bike_Map\'>Colin Marquardt</a> from NASA SRTM data", overlay: true }
+				{ "alt": "OpenStreetMap", "tileUrl": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", "name": "osm", "subdomains": "abc" },
+				{ "alt": "🗝️ OpenCycleMap", "tileUrl": "https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png", "name": "ocm", "apiKey": "OpenCycleMap", "apiKeyQuery": "apikey={apikey}" },
+				{ "alt": "Bing Maps", "tileUrl": "https://ecn.t{s}.tiles.virtualearth.net/tiles/r{q}?g=864&mkt=en-gb&lbl=l1&stl=h&shading=hill&n=z", "subdomains": "0123", "minZoom": 1, "maxZoom": 20, "attribution": "<a href=\'https://www.bing.com/maps/\'>Bing</a> map data copyright Microsoft and its suppliers", "name": "bingmap", "ignore": true },
+				{ "alt": "Bing Aerial View", "tileUrl": "https://ecn.t{s}.tiles.virtualearth.net/tiles/a{q}?g=737&n=z", "subdomains": "0123", "minZoom": 1, "maxZoom": 20, "attribution": "<a href=\'https://www.bing.com/maps/\'>Bing</a> map data copyright Microsoft and its suppliers", "name": "bingaerial" },
+				{ "alt": "Google Maps", "tileUrl": "https://mt.google.com/vt?&x={x}&y={y}&z={z}", "name": "googlemaps", "attribution": "<a href=\'https://maps.google.com/\'>Google</a> Maps", "subdomains": "1234", "tileSize": 256, "maxZoom": 22 },
+				{ "alt": "Google Satellite", "tileUrl": "https://mt.google.com/vt?lyrs=s&x={x}&y={y}&z={z}", "name": "googlemapssat", "attribution": "<a href=\'https://maps.google.com/\'>Google</a> Maps Satellite", "subdomains": "1234", "tileSize": 256, "maxZoom": 22 },
+				{ "alt": "Freemap Outdoor (CZ, SK, jih Evropy)", "tileUrl": "https://outdoor.tiles.freemap.sk/{z}/{x}/{y}", "attribution": "Map &copy; <a href='http://www.freemap.sk/'>Freemap Slovakia</a>, data &copy; <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors", "minZoom": 6, "maxZoom": 19, "ignore": true },
+				{ "alt": "Mapy.cz - Turistická", "tileUrl": "https://mapserver.mapy.cz/turist-m/{z}-{x}-{y}", "minZoom": 5, "maxZoom": 19, "attribution": "© <a href='//www.seznam.cz' target='_blank'>Seznam.cz, a.s.</a>, © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>, © NASA" },
+				{"alt": "ČUZK Hillshading (CZ, zoom 10+)", "tileUrl": "https://ags.cuzk.cz/arcgis2/services/dmr5g/ImageServer/WMSServer", "crs": "EPSG:4326", "layers": "dmr5g:GrayscaleHillshade", "format": "image/png", "transparent": false, "attribution": "© Český úřad zeměměřický a katastrální", "opacity": "0.5", "overlay": true, "ignore": false, "minZoom": 10, "maxZoom": 20 },
+				{"alt": "ArcGis Hillshading (max zoom 16)", "tileUrl": "https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}", "attribution": "Esri | Esri, HERE, Garmin, METI/NASA, USGS", "opacity": "0.5", "overlay": true, "ignore": false, "minZoom": 2, "maxZoom": 16 },
 			],
 			apiKeys: {},
 		},
@@ -95,6 +94,7 @@
 			.leaflet-control-zoomwarning { top: 94px; }\
 			.leaflet-control-zoomwarning a { filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="#BFC80000",EndColorStr="#BFC80000"); background-color:rgba(200,0,0,0.75); margin-left: -4px; background-position: -502px 2px;height:14px;width:14px; border-color: #b00; box-shadow: 0 0 8px rgba(0, 0, 0, 0.4); }\
 			.leaflet-control-zoomwarning a:hover { background-color:rgba(230,0,0,0.75); }\
+			.leaflet-control-layers.leaflet-control.leaflet-control-layers-expanded { max-height: calc(100vh - 200px); overflow: auto; min-height: 300px; }\
 			.gme-event { cursor: pointer; }\
 			.gme-modalDialog {position: fixed; top: 0; right: 0; bottom: 0; left: 0; background: rgba(0,0,0,0.5); z-index: 1000; opacity:.5; -webkit-transition: opacity 400ms ease-in; -moz-transition: opacity 400ms ease-in; transition: opacity 400ms ease-in; pointer-events: none; display:none; }\
 			.gme-modalDialog:target, .gme-modalDialog.gme-targetted { opacity:1; display:block; pointer-events: auto; }\

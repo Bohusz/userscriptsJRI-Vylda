@@ -1,0 +1,92 @@
+html {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 16px;
+    color: black;
+}
+
+article {
+    width: 60%;
+    max-width: 900px;
+    min-width: 400px;
+    border: 2px solid #999;
+    background-color: #ccc;
+    border-radius: 15px;
+    padding: 15px 30px;
+    margin: 15px auto;
+}
+
+h1 {
+    font-size: 150%;
+}
+
+h2 {
+    font-size: 125%;
+}
+
+h3 {
+    font-size: 110%;
+}
+
+article div.image {
+    text-align: center;
+}
+
+article div.image img {
+    box-shadow: 0px 0px 5px black;
+    padding: 5px;
+    background: white;
+    border-radius: 5px;
+    margin: 5px 10px;
+}
+
+#vylda-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#vylda-modal.opened {
+    display: flex;
+}
+
+#vylda-modal img {
+    max-width: 80vw;
+    max-height: 80vh;
+    display: block;
+    width: auto;
+    height: auto;
+}
+
+#vylda-modal #vylda-modal-title {
+    color: white;
+}
+
+#a1 {
+    text-decoration: none;
+    color: black;
+    cursor: text;
+}
+
+#a2 {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: transparent;
+    cursor: default;
+}
+
+#samples {
+    text-align: center;
+}
+
+#samples img {
+    margin: 5px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Geocaching Map Enhancements</title>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,400i,700&amp;subset=latin-ext" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+		<link rel="shortcut icon" href="GeocachingMap92.png" type="image/x-icon">
+		<script src="modal.js"></script>
+	</head>
+
+	<body>
+		<article>
+			<h1>Geocaching Map Enhancements</h1>
+			<h2>Skript pro zobrazení alternativních map na mapě Geocaching.com</h2>
+			<p>Pokud si <a href="#instalace">nainstalujete</a> skript <a href="./GeocachingMapEnhancements.user.js">Geocaching Map Enhancements</a>, tak si můžete na <a href="https://www.geocaching.com/map/" target="_blank" rel="noopener noreferrer">mapě kešek</a>zobrazit mapy i jiné než standardní. Například <a href="https://mapy.cz" target="_blank">Mapy.cz</a>, <a href="https://freemap.sk" target="_blank">Freemap.sk</a> nebo <a href="https://www.opencyclemap.org/" target="_blank">Opencycle mapu</a>.</p>
+			<div class="image">
+				<a href="images/screen.png" class="modal" title="Mapy.cz na mapě Geocachingu"><img src="images/screen-thumbnail.png" alt="Mapy.cz na mapě Geocachingu"></a>
+			</div>
+			<p>
+				Pro mapy, které vyžadují API klíč (🗝️), můžete vložit vlastní klíč získaný na stránkách odpovídajích mapových podkladů.
+			</p>
+			<p>
+				Dále můžete přes ovládací panel zapínat a vypínat viditelnost keší, zjišťovat informace o konkrétním bodě v mapě, kreslit cestu pomocí trasových bodů a měřit vzdálenost a rychle přejít na domovské souřadnice. A samozřejmě mapy spravovat.
+			</p>
+			<h3>Další mapy</h3>
+			<p>
+				Další mapy lze najít ma rozcestníku zajímavých <a href="https://gitlab.com/Vylda/gc-skripty-rozcestnik#geocaching-map-enhancements" target="_blank">skriptů pro Geocaching</a>.
+			</p>
+			<h3 id="instalace">Instalace</h3>
+			<p> Je potřeba mít v prohlížeči nainstalovaný nějaký spouštěč skriptů. </p>
+			<ul>
+				<li>pro Firefox: <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/" target="_blank" rel="noopener noreferrer">Grease Monkey</a>, <a href="https://addons.mozilla.org/cs/firefox/addon/tampermonkey/" target="_blank" rel="noopener noreferrer">Tamper Monkey</a></li>
+				<li>pro Chrome: <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo"
+						target="_blank" rel="noopener noreferrer">Tamper Monkey</a></li>
+			</ul>
+			<p> Je třeba nainstalovat <a href="./GeocachingMapEnhancements.user.js" target="_blank">Geocaching Map Enhancements</a>. </p>
+			<p>Pokud je nainstalovaný Monkey (viz odkazy výše), dojde při kliknutí na odkaz <a href="./GeocachingMapEnhancements.user.js" target="_blank">Geocaching Map Enhancements</a> k automatickému spuštění instalace.</p>
+			<p>Po úspěšné instalaci se na <a href="https://www.geocaching.com/map/" target="_blank" rel="noopener noreferrer">mapě kešek</a> objeví vlevo dole přepínače a změní se nabídka map.</p>
+			<h3>Užitečné odkazy (v angličtině)</h3>
+			<p>
+				<ol>
+					<li><a href="http://geo.inge.org.uk/gme.htm" target="_blank" rel="noopener noreferrer">Návod</a></li>
+					<li><a href="http://geo.inge.org.uk/gme_maps.htm" target="_blank" rel="noopener noreferrer">Mapové podklady (zastaralé)</a></li>
+					<li><a href="http://geo.inge.org.uk/gme_config.htm" target="_blank" rel="noopener noreferrer">Návod na vlastní definici mapy</a></li>
+					<li><a href="http://geo.inge.org.uk/gme_trouble.htm" target="_blank" rel="noopener noreferrer">Když máte problémy…</a></li>
+				</ol>
+			</p>
+		</article>
+	</body>
+
+</html>
