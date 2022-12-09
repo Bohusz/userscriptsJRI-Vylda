@@ -31,7 +31,7 @@
 		parameters: {
 			// Defaults
 			version: "0.9.3",
-			versionMsg: "Waiting for resources loaded in GC page; fixed: Map layer control",
+			versionMsg: "Version 0.9.3.\nfixed: Map layer control",
 			brightness: 1,	// Default brightness for maps (0-1), can be overridden by custom map parameters.
 			filterFinds: false, // True filters finds out of list searches.
 			follow: false,	// Locator widget follows current location (moving map mode)
