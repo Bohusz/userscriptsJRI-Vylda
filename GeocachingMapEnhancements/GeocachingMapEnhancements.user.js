@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Geocaching Map Enhancements
-// @version     0.9.2
+// @version     0.9.3
 // @author      JRI, Vylda
 // @oujs:author JRI, Vylda
 // @namespace   inge.org.uk/userscripts
@@ -34,16 +34,16 @@
 	var gmeResources = {
 		parameters: {
 			// Defaults
-			version: "0.9.2",
-			versionMsg: "Waiting for resources loaded in GC page",
+			version: "0.9.3",
+			versionMsg: "Waiting for resources loaded in GC page; fixed: Map layer control",
 			brightness: 1,	// Default brightness for maps (0-1), can be overridden by custom map parameters.
 			filterFinds: false, // True filters finds out of list searches.
 			follow: false,	// Locator widget follows current location (moving map mode)
 			labels: "codes", // Label caches on the map with their GC code. Or "names" to use long name.
 			measure: "metric",	// Or "imperial" - used for the scale indicators
 			osgbSearch: true,	// Enhance search box with OSGB grid references, zooming, etc. (may interfere with postal code searches)
-			defaultMap: "OpenStreetMap",
-			defaultHillShading: "Hillshading",
+			defaultMap: "Mapy.cz - Turistická",
+			defaultHillShading: "",
 			maps: [
 				//	{alt:"Readable Name", tileUrl: "URL template including {s} (subdomain) and either {q} (quadkey) or {x},{y},{z} (Google/TMS tile coordinates + zoom)", subdomains: "0123", minZoom: 0, maxZoom: 24, attribution: "Copyright message (HTML allowed)", name: "shortname", overlay:false }
 				{ "alt": "OpenStreetMap", "tileUrl": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", "name": "osm", "subdomains": "abc" },
@@ -94,7 +94,7 @@
 			.leaflet-control-zoomwarning { top: 94px; }\
 			.leaflet-control-zoomwarning a { filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="#BFC80000",EndColorStr="#BFC80000"); background-color:rgba(200,0,0,0.75); margin-left: -4px; background-position: -502px 2px;height:14px;width:14px; border-color: #b00; box-shadow: 0 0 8px rgba(0, 0, 0, 0.4); }\
 			.leaflet-control-zoomwarning a:hover { background-color:rgba(230,0,0,0.75); }\
-			.leaflet-control-layers.leaflet-control.leaflet-control-layers-expanded { max-height: calc(100vh - 200px); overflow: auto; min-height: 300px; }\
+			.leaflet-control-layers.leaflet-control.leaflet-control-layers-expanded form.leaflet-control-layers-list { height: auto; max-height: calc(100vh - 200px); overflow-y: auto; overflow-x: hidden; }\
 			.gme-event { cursor: pointer; }\
 			.gme-modalDialog {position: fixed; top: 0; right: 0; bottom: 0; left: 0; background: rgba(0,0,0,0.5); z-index: 1000; opacity:.5; -webkit-transition: opacity 400ms ease-in; -moz-transition: opacity 400ms ease-in; transition: opacity 400ms ease-in; pointer-events: none; display:none; }\
 			.gme-modalDialog:target, .gme-modalDialog.gme-targetted { opacity:1; display:block; pointer-events: auto; }\
