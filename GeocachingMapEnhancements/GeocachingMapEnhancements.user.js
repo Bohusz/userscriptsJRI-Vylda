@@ -38,7 +38,7 @@
 			labels: "codes", // Label caches on the map with their GC code. Or "names" to use long name.
 			measure: "metric",	// Or "imperial" - used for the scale indicators
 			osgbSearch: true,	// Enhance search box with OSGB grid references, zooming, etc. (may interfere with postal code searches)
-			defaultMap: "Mapy.cz - Turistická",
+			defaultMap: "OpenStreetMap",
 			defaultHillShading: "",
 			maps: [
 				//	{alt:"Readable Name", tileUrl: "URL template including {s} (subdomain) and either {q} (quadkey) or {x},{y},{z} (Google/TMS tile coordinates + zoom)", subdomains: "0123", minZoom: 0, maxZoom: 24, attribution: "Copyright message (HTML allowed)", name: "shortname", overlay:false }
